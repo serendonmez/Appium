@@ -1,4 +1,4 @@
-package day3;
+package tests.day3;
 
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
@@ -6,7 +6,6 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -17,7 +16,7 @@ import java.net.URL;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class ArabamApp {
+public class C01_ArabamApp {
 
 
     AndroidDriver<AndroidElement>driver;
@@ -25,14 +24,10 @@ public class ArabamApp {
     public void setUp() throws MalformedURLException {
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(MobileCapabilityType.DEVICE_NAME,"PIXEL 4"); // cihaz ismi
-
-        // cap.setCapability("deviceName","PIXEL 4"); ikisini de string olarak belirtebiliriz
-        // eger tek emülatör cihazimiz varsa ve aktif ise cihaz ismi farkli girsek bile test passed olur
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android"); // ios / android
-        // cap.setCapability("platformName","Android");
         cap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"10.0"); // cihazin isletim sistemi
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2"); //  cihazin otomasyonu
-        //cap.setCapability(MobileCapabilityType.APP,"C:\\Users\\User\\IdeaProjects\\Appium_T_141\\Apps\\Apk Bilgisi_2.3.4_apkcombo.com.apk");
+        // cap.setCapability(MobileCapabilityType.APP,"C:\\Users\\User\\IdeaProjects\\Appium_T_141\\Apps\\arabam.com_5.1.6_Apkpure.apk");
             /*
           set cap ile app i telefona yükleme ve appi acma isemi yapar
              */
@@ -61,15 +56,16 @@ public class ArabamApp {
         // arac olarak Volkswagen secilir
         TouchAction action=new TouchAction<>(driver);
         action.press(PointOption.point(382,1935))
+                //press islmei ekranda ilk dokundugumuz yerdir
                 // buraya yazilacak pixel degerleri icin, Tap/Swipe By Coordinate e tikla
                 // X  Y koordinatlarina göre istenilen Elementin koordinati bulunur
 
-                // pres islemi ekran parmagimizi kaydir islemini baslatmak icin ilk dokundugumuz yerdir
+                // press islemi ekran parmagimizi kaydir islemini baslatmak icin ilk dokundugumuz yerdir
                 .waitAction(WaitOptions.waitOptions(Duration.ofMillis(90)))
                 // baslangic noktasiyla bitis noktasi arasindaki gecen sure
                 // eger sure azalirsa; gidilen yol mesafesi ARTAR
                 // eger sureyi arttirirsan; gidilen yol mesafesi AZALIR !!
-                // yani tamamen bir ters oranti vardir. ekranda daha fazla assagi ya da yukari gitmek istiyorsak
+                // yani tamamen bir ters oranti vardir. ekranda daha fazla asagi ya da yukari gitmek istiyorsak
                 // birim zamanda sureyi azaltmaliyiz
                 .moveTo(PointOption.point(382,69))
                 // Move to pressten sonra kaydirilacak alan olan ekrandaki koordinat noktasi

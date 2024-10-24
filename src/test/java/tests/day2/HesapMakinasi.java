@@ -1,4 +1,4 @@
-package day2;
+package tests.day2;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -35,6 +35,7 @@ public class HesapMakinasi {
         cap.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2"); //  cihazin otomasyonu
         cap.setCapability(MobileCapabilityType.APP, "C:\\Users\\User\\IdeaProjects\\Appium_T_141\\Apps\\Calculator_8.4 (503542421)_Apkpure (3).apk");
 
+        // C:\Users\User\IdeaProjects\Appium_T_141\Apps\Calculator_8.4 (503542421)_Apkpure (3).apk
         driver = new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 

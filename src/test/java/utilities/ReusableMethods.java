@@ -15,17 +15,26 @@ import java.time.Duration;
 import java.util.Date;
 
 public class ReusableMethods {
+  static  AndroidDriver driver = (AndroidDriver)  Driver.getAndroidDriver();
 
-    public static void koordinatTiklamaMethodu(int x,int y,int bekleme) throws InterruptedException {
+    public static void koordinatTiklamaMethodu(int x, int y, int bekleme){
         TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
-        action.press(PointOption.point(x,y))
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(bekleme)))
-                .release()
-                .perform();
+
+
+            action.press(PointOption.point(x, y))
+                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(bekleme)))
+                    .release()
+                    .perform();
+
+
+
+
+
+
     }
 
     public static void scrollWithUiScrollableAndClick(String elementText) {
-        AndroidDriver driver = (AndroidDriver)  Driver.getAndroidDriver();
+
         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
         driver.findElementByXPath("//*[@text='" + elementText + "']").click();
     }
@@ -49,4 +58,6 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
+
+
 }

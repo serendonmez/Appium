@@ -46,7 +46,7 @@ public class APKYukleme {
         UIAutomator 2 isletim sistemi 6.0 dan büyük olan isletim sistemleri icin
          */
 
-        cap.setCapability(MobileCapabilityType.APP,"C:\\Users\\User\\IdeaProjects\\Appium_T_141\\Apps\\Kiwi.com - Book Cheap Flights_2023.14.0_Apkpure.apk");
+        cap.setCapability(MobileCapabilityType.APP,"C:\\Users\\User\\IdeaProjects\\Appium_T_141\\Apps\\all-currency-converter-3-9-0 (1).apk");
 
 
         driver=new AndroidDriver<AndroidElement>(new URL("http://127.0.0.1:4723/wd/hub"),cap);

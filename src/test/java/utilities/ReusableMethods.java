@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -40,7 +41,7 @@ public class ReusableMethods {
     }
 
     public static void scrollWithUiScrollable(String elementText){
-        AndroidDriver driver = (AndroidDriver)  Driver.getAndroidDriver();
+
         driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + elementText + "\"))");
     }
 
@@ -58,6 +59,8 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
+
+
 
 
 }

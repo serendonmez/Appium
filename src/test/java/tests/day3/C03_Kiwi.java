@@ -86,19 +86,28 @@ public class C03_Kiwi {
 
 
         // 465 1661
+
+
+
+
+
         TouchAction action=new TouchAction<>(driver);
         for (int i = 0; i <7; i++) {
 
 
             action.press(PointOption.point(465, 1661))
-                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(900)))
+                    .waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000)))
                     .moveTo(PointOption.point(465, 297))
                     .release()
                     .perform();
             Thread.sleep(1000);
         }
 
+
+
         action.press(PointOption.point(685,933)).release().perform();
+
+
 
         Thread.sleep(500);
         kiwiPage.setDate.click();
@@ -121,8 +130,9 @@ public class C03_Kiwi {
 
         // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
 
+
        String biletFiyati= kiwiPage.biletFiyati.getText();
-       driver.sendSMS("1111111111111","bu ucusun fiyati : "+biletFiyati);
+       driver.sendSMS("1111125631111","bu ucusun fiyati : "+biletFiyati);
 
 
 

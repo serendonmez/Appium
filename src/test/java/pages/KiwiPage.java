@@ -66,7 +66,7 @@ public WebElement cheapest;
 @FindBy(xpath = "(//*[@text='Berlin'])[1]")
     public WebElement berlin;
 
-@FindBy(xpath = "(//*[@class='android.widget.TextView'])[11]")
+@FindBy(xpath = "(//android.widget.TextView[@text=\"$175.00\"])[1]")
     public WebElement biletFiyati;
 
 
